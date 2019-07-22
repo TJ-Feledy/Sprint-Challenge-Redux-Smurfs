@@ -10,6 +10,7 @@ export function getSmurfs() {
     
     axios.get('http://localhost:3333/smurfs/')
       .then((res) => {
+        console.log(res)
         dispatch({type: GET_SMURFS_SUCCESS, payload: res.data})
       })
       .catch((err) => {
