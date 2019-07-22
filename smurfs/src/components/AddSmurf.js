@@ -24,6 +24,8 @@ class AddSmurf extends React.Component {
       age: '',
       height: '',
     })
+
+    this.props.history.push('/')
   }
 
   handleChange = (evt) => {
@@ -41,19 +43,22 @@ class AddSmurf extends React.Component {
             placeholder="name"
             value={this.state.name}
             name="name"
-          />
+            required
+          /><br />
           <input
             onChange={this.handleChange}
             placeholder="age"
             value={this.state.age}
             name="age"
-          />
+            required
+          /><br />
           <input
             onChange={this.handleChange}
             placeholder="height"
             value={this.state.height}
             name="height"
-          />
+            required
+          /><br />
           <div className='formButtons'>
             <button type="submit">Add to the village</button>
           </div>
