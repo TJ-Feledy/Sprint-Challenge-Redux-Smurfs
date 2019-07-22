@@ -23,8 +23,16 @@ In this challenge, you are to build the Smurfs village once again, only this tim
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
 - [ ] In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
+
+    - State is called a Single Source of Truth because the state of your whole app is stored in a single state object. State is immutable. The only way to change state is to emit an action using an object describing what happened. Reducers are just pure functions that take the previous state and an action and return the next state.
+
 - [ ] What is the difference between Application state and Component state? When would be a good time to use one over the other?
+
+    - The application state is your single source of truth for the entire app.  The component state is basically a storage utility that is unique to that specific component.  Updating the component state does not change the Application state. A good time to use component state over application state is when creating a form that needs to save user input and reset input fields.
+
 - [ ] Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
+
+    - Redux-thunk is a middleware. It allows us to perform another action between the action-creator and the reducer. Redux-thunk is specifically used to perform asynchronous actions so that we can make API calls from the action-creators.
 
 ## Project Set Up
 
