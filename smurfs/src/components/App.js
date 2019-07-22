@@ -25,7 +25,7 @@ class App extends Component {
   }
 }
 const mapDispatchToProps = {
-  getSmurfs,
+  getSmurfs: getSmurfs,
 }
 
 export default connect(null, mapDispatchToProps)(App);
