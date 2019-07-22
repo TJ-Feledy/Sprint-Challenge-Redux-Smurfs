@@ -3,6 +3,8 @@ import './App.css';
 import {getSmurfs} from '../actions/index'
 import { connect } from 'react-redux';
 import SmurfsList from './SmurfsList'
+import AddSmurf from './AddSmurf'
+import { Link, Route } from 'react-router-dom'
 /*
  to wire this component up you're going to need a few things.
  I'll let you do this part on your own. 
@@ -17,7 +19,13 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <SmurfsList />
+        <nav>
+          <Link className='listLink' to='/'>Village</Link>
+          <Link className='addLink' to='/addSmurf'>Add a Smurf</Link>
+        </nav>
+
+        <Route path='/' exact render={props => <SmurfsList {...props} /> } />
+        <Route path='/addSmurf' render={props => <AddSmurf {...props} /> } />
       </div>
     );
   }
