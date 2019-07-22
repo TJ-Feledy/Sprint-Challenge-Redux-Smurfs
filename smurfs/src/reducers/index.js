@@ -26,9 +26,9 @@ export default function(state = initialState, action) {
     case GET_SMURFS_SUCCESS: {
       return {
         ...state,
-        smurfs: action.payload.smurfs,
+        smurfs: action.payload,
         fetchingSmurfs: false,
-        error: action.payload
+        error: null
       }
     }
     case GET_SMURFS_FAILED: {
@@ -38,6 +38,8 @@ export default function(state = initialState, action) {
         error: action.payload,
       }
     }
+    default:
+      return state
   }
 }
 /*
